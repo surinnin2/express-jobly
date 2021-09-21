@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "jobNewSchema",
+    "description": "Schema for new Job class objects",
+    "required": [
+        "title",
+        "companyHandle"
+    ],
+    "properties": {
+        "title": {
+            "$id": "#/properties/title",
+            "type": "string",
+            "title": "The title schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "title"
+            ]
+        },
+        "salary": {
+            "$id": "#/properties/salary",
+            "type": "integer",
+            "title": "The salary schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                10
+            ],
+            "minimum": 0
+        },
+        "equity": {
+            "$id": "#/properties/equity",
+            "type": "string",
+            "title": "The equity schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "0.1"
+            ]
+        },
+        "companyHandle": {
+            "$id": "#/properties/companyHandle",
+            "type": "string",
+            "title": "The companyHandle schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "comapny"
+            ]
+        }
+    },
+    "additionalProperties": false
+}

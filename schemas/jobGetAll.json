@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "Query schema",
+    "description": "Query schema for getAll /job",
+    "properties": {
+        "minSalary": {
+            "$id": "#/properties/minSalary",
+            "type": "integer",
+            "minimum": 0
+        },
+        "hasEquity": {
+            "$id": "#/properties/hasEquity",
+            "type": "boolean"
+        },
+        "title": {
+            "$id": "#/properties/title",
+            "type": "string",
+            "minLength": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": []
+}
