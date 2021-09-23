@@ -104,6 +104,7 @@ async function commonAfterAll() {
 
 const u1Token = createToken({ username: "u1", isAdmin: false });
 
+//otherUserToken for routes needing specific user for access
 const otherUserToken = createToken({ username: "other", isAdmin:false })
 
 //adminToken for routes needing admin for access

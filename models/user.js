@@ -211,6 +211,8 @@ class User {
   // Add a user to application table with username and job_id
   static async apply(username, jobID) {
 
+    //Use sql for error checking and reduce # of queries
+    
     let user = await db.query(
           `SELECT username FROM users WHERE username = $1`,[username])
     if (user.rows.length === 0) throw new NotFoundError(`No user with username: ${username} found`)

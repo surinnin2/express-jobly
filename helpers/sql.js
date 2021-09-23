@@ -8,7 +8,7 @@ that will be used to update in an sql query. jsToSql is a json object
 with keys corresponding to keys in dataToUpdate and values specifying 
 what the sql query will have as the name of the column to be updated
 */
-function sqlForPartialUpdate(dataToUpdate, jsToSql) {
+function sqlForPartialUpdate(dataToUpdate, jsToSql = {}) {
   const keys = Object.keys(dataToUpdate);
   if (keys.length === 0) throw new BadRequestError("No data");
 
@@ -32,9 +32,9 @@ function sqlForPartialUpdate(dataToUpdate, jsToSql) {
 function sqlForGetAllCompanies(queries = {}) {
   const { minEmployees, maxEmployees, name } = queries
   // WHERE line of the sql query
-  where = []
+  const where = []
   // values [] for the sql query
-  vals = []
+  const vals = []
   // base sql query to add to
   let db_query = `SELECT handle, name, description, num_employees AS "numEmployees", logo_url AS "logoUrl" FROM companies`
   
