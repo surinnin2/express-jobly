@@ -12,7 +12,7 @@ describe('sqlForPartialUpdate Test', function () {
         }
         expect(sqlForPartialUpdate(dataToUpdate, jsToSql)).toEqual(
             {
-                setCols: '"labe1forSQL"=$1, "label2forSQL"',
+                setCols: '"label1forSQL"=$1, "label2forSQL"=$2',
                 values: ['value1', 'value2']
 
             }
@@ -24,16 +24,13 @@ describe('sqlForPartialUpdate Test', function () {
             key1: "value1",
             key2: "value2"
         }
-        let jsToSql = {
-            key1: "label1forSQL",
-            key2: "label2forSQL"
-        }
-        expect(sqlForPartialUpdate(dataToUpdate, jsToSql)).toEqual(
+        expect(sqlForPartialUpdate(dataToUpdate)).toEqual(
             {
-                setCols: '"key1"=$1, "key2"',
+                setCols: '"key1"=$1, "key2"=$2',
                 values: ['value1', 'value2']
 
             }
         )
     })
+
 })
