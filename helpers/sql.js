@@ -72,9 +72,9 @@ function sqlForGetAllCompanies(queries = {}) {
 function sqlForGetAllJobs(queries = {}) {
   const { minSalary, hasEquity, title } = queries
 
-  where = []
+  const where = []
 
-  vals = []
+  const vals = []
 
   let db_query = `SELECT j.id, 
                          j.title,
